@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/mainLayout"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<!-- Weather background animation -->
+<com.airbnb.lottie.LottieAnimationView
+    android:id="@+id/weatherAnimation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:lottie_rawRes="@raw/animation_1748581637639"
+app:lottie_autoPlay="true"
+app:lottie_loop="true"
+android:scaleType="centerCrop" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/helloWeatherCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardElevation="0dp"
+        android:elevation="6dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Hello Weather"
+            android:textSize="70dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/mistral"
+            android:gravity="center"
+            android:textColor="@android:color/black" />
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <!-- Content layout overlay -->
+<LinearLayout
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Card for city & coordinates -->
+
+    <!-- Haze + Temperature -->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="20dp"
+        android:background="#80D1ECF1"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        android:padding="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#80D1ECF1"
+
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/city"
+                    android:layout_width="0dp"
+                    android:background="#80D1ECF1"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Enter City Name"
+                    android:textColor="@android:color/black"
+                    android:inputType="text"
+                    android:textColorHint="#88FFFFFF"
+                    android:padding="12dp" />
+
+                <Button
+                    android:id="@+id/searchButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#80D1ECF1"
+                    android:text="Search"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- Add coordinates TextView here -->
+            <TextView
+                android:id="@+id/coordinates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latitude, Longitude"
+                android:textColor="@android:color/black"
+                android:paddingTop="8dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="#80D1ECF1"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/weatherType"
+            android:text="Haze"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/temp"
+            android:text="23°C\nMin temp:18 \nMax temp:26"
+            android:textColor="@android:color/black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Pressure & Humidity -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="#80D1ECF1"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/pressure"
+            android:text="1000\nPressure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/humidity"
+            android:text="1000\nHumidity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Wind Speed -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#80D1ECF1"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/windSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.56"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/windDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wind speed   Degree:- 305      Gust:- "
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</LinearLayout>
+
+</RelativeLayout>
